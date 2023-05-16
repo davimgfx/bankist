@@ -265,7 +265,6 @@ h4 {
 
 .operations__tab--3 {
   background-color: var(--color-tertiary);
-
 }
 
 .operations__tab--3:hover {
@@ -652,87 +651,92 @@ h4 {
   .features {
     gap: 4rem;
   }
-  .nav__links{
+  .nav__links {
     display: none;
   }
 
- .header__title{
-  margin: 0 5rem;
-  position: relative;
-  top: 20%;
-  display: flex;
-  text-align: center;
+  .header__title {
+    margin: 0 5rem;
+    position: relative;
+    top: 25%;
+    display: flex;
+    text-align: center;
   }
-  .header__img{
+  .header__img {
     display: none;
   }
-  .features{
+  .features {
     display: flex;
     gap: 3rem;
     text-align: center;
-
   }
-  .features__img{
+  .features__img {
     display: none;
   }
 }
 
-@media (max-width: 960px){
-  .features{
+@media (max-width: 960px) {
+  .features {
     flex-direction: column;
   }
 }
 
 @media (max-width: 900px) {
-  h1{
+  h1 {
     font-size: 3.2rem;
   }
   h4 {
     font-size: 2rem;
   }
-  .section__header{
+  .features__feature p {
+    font-size: 1.8rem;
+  }
+  .section__header {
     font-size: 2.8rem;
   }
 
-  .operations{
+  .operations {
+    margin-top: 1rem;
     max-width: none;
     display: flex;
     flex-direction: column-reverse;
+    border-radius: 1.5rem;
   }
-  
-  .operations__tab{
+
+  .operations__tab {
     padding: 2rem 10rem;
     margin: auto;
   }
 
-  .operations__tab-container{
+  .operations__tab-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 2rem 10rem;
   }
 
-  .operations__icon{
+  .operations__icon {
     margin: auto;
   }
-  .operations__content{
+  .operations__content {
     text-align: center;
   }
-  .operations__content--active{
+  .operations__content--active {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 2rem 2rem;
   }
 
-  .footer__nav{
+  .footer__nav {
     display: flex;
     flex-direction: column;
     text-align: center;
-    gap: 2rem
+    gap: 2rem;
   }
 
-  .footer__copyright, .footer__logo{
+  .footer__copyright,
+  .footer__logo {
     transform: translateX(-2rem);
   }
 }
