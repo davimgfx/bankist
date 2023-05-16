@@ -715,7 +715,9 @@ h4 {
   .operations__icon{
     margin: auto;
   }
-
+  .operations__content{
+    text-align: center;
+  }
   .operations__content--active{
     display: flex;
     flex-direction: column;
