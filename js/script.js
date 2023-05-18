@@ -13,6 +13,7 @@ import {
   tabs,
   tabsContainer,
   tabsContent,
+  nav,
 } from "./variables.js";
 
 // * MODAL WINDOW
@@ -54,10 +55,29 @@ menuIcon.onclick = () => {
 tabsContainer.addEventListener("click", function (e) {
   const clicked = e.target.closest(".operations__tab");
   console.log(clicked);
-  if(!clicked) return;
-  tabs.forEach(t => t.classList.remove("operations__tab--active"));
+  if (!clicked) return;
+  tabs.forEach((t) => t.classList.remove("operations__tab--active"));
   clicked.classList.add("operations__tab--active");
 
-  tabsContent.forEach(t => t.classList.remove("operations__content--active"));
-  document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add("operations__content--active");
+  tabsContent.forEach((t) => t.classList.remove("operations__content--active"));
+  document
+    .querySelector(`.operations__content--${clicked.dataset.tab}`)
+    .classList.add("operations__content--active");
 });
+
+//* MENU FADE ANIMATION
+const handleHover = function (e){
+  if (e.target.classList.contains("nav__link")) {
+    const clickedLink = e.target;
+    const siblings = clickedLink.closest(".nav").querySelectorAll(".nav__link");
+    const logo = clickedLink.closest(".nav").querySelector("img");
+
+    siblings.forEach((el) => {
+      if (el !== clickedLink) el.style.opacity = this;
+      logo.style.opacity = this;
+    });
+  }
+};
+nav.addEventListener("mouseover", handleHover.bind(0.5));
+
+nav.addEventListener("mouseout", handleHover.bind(1));

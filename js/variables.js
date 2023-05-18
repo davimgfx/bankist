@@ -7,10 +7,13 @@ const btnScrollTo = document.querySelector(".btn--scroll-to");
 const section1 = document.querySelector("#section--1");
 
 const menuIcon = document.querySelector("#menu__icon");
+
+const nav = document.querySelector(".nav")
 const navbar = document.querySelector(".nav__links")
 const navbarLinks = document.querySelectorAll(".nav__link")
 
 const tabs = document.querySelectorAll(".operations__tab")
 const tabsContainer = document.querySelector(".operations__tab-container")
 const tabsContent = document.querySelectorAll(".operations__content")
-export { modal, overlay, btnCloseModal, btnsOpenModal, btnScrollTo, section1, menuIcon, navbar, navbarLinks, tabs,tabsContainer, tabsContent };
+
+export { modal, overlay, btnCloseModal, btnsOpenModal, btnScrollTo, section1, menuIcon, navbar, navbarLinks, tabs,tabsContainer, tabsContent, nav };
