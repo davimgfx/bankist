@@ -8,9 +8,9 @@ import {
   btnScrollTo,
   section1,
   menuIcon,
-  navbar
+  navbar,
+  navbarLinks,
 } from "./variables.js";
-
 
 // * MODAL WINDOW
 const openModal = function (e) {
@@ -31,15 +31,15 @@ overlay.addEventListener("click", closeModal);
 
 document.addEventListener("keydown", function (e) {
   if (e.key === "Escape" && !modal.classList.contains("hidden")) {
-    closeModal();
+    closeModal( );
   }
 });
 
-btnScrollTo.addEventListener("click", (e) => {
+// * BTN SCROLL TO
+btnScrollTo.addEventListener('click', function (e) {
   const s1coords = section1.getBoundingClientRect();
-  console.log(s1coords);
+  section1.scrollIntoView({ behavior: 'smooth' });
 });
-
 
 // * MENU ICON NAVBAR
 menuIcon.onclick = () => {

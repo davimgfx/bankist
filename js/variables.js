@@ -8,4 +8,5 @@ const section1 = document.querySelector("#section--1");
 
 const menuIcon = document.querySelector("#menu__icon");
 const navbar = document.querySelector(".nav__links")
-export { modal, overlay, btnCloseModal, btnsOpenModal, btnScrollTo, section1, menuIcon, navbar };
+const navbarLinks = document.querySelectorAll(".nav__link")
+export { modal, overlay, btnCloseModal, btnsOpenModal, btnScrollTo, section1, menuIcon, navbar, navbarLinks };
