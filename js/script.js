@@ -39,9 +39,14 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
+// * STICKY NAVIGATION
+window.addEventListener("scroll", function (e) {
+  nav.classList.toggle("sticky", window.scrollY > 150);
+})
+
+
 // * BTN SCROLL TO
 btnScrollTo.addEventListener("click", function (e) {
-  const s1coords = section1.getBoundingClientRect();
   section1.scrollIntoView({ behavior: "smooth" });
 });
 
