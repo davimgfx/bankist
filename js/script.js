@@ -10,6 +10,9 @@ import {
   menuIcon,
   navbar,
   navbarLinks,
+  tabs,
+  tabsContainer,
+  tabsContent,
 } from "./variables.js";
 
 // * MODAL WINDOW
@@ -23,7 +26,7 @@ const closeModal = function () {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
 };
-
+//Pratica ruim
 btnsOpenModal.forEach((btn) => btn.addEventListener("click", openModal));
 
 btnCloseModal.addEventListener("click", closeModal);
@@ -31,14 +34,14 @@ overlay.addEventListener("click", closeModal);
 
 document.addEventListener("keydown", function (e) {
   if (e.key === "Escape" && !modal.classList.contains("hidden")) {
-    closeModal( );
+    closeModal();
   }
 });
 
 // * BTN SCROLL TO
-btnScrollTo.addEventListener('click', function (e) {
+btnScrollTo.addEventListener("click", function (e) {
   const s1coords = section1.getBoundingClientRect();
-  section1.scrollIntoView({ behavior: 'smooth' });
+  section1.scrollIntoView({ behavior: "smooth" });
 });
 
 // * MENU ICON NAVBAR
@@ -46,3 +49,12 @@ menuIcon.onclick = () => {
   menuIcon.classList.toggle("fa-xmark");
   navbar.classList.toggle("block");
 };
+
+// * TABBED COMPONENT
+tabsContainer.addEventListener("click", function (e) {
+  const clicked = e.target.closest(".operations__tab");
+  console.log(clicked);
+  if(!clicked) return;
+  tabs.forEach(t => t.classList.remove("operations__tab--active"));
+  clicked.classList.add("operations__tab--active");
+});
