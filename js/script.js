@@ -9,12 +9,13 @@ import {
   section1,
   menuIcon,
   navbar,
-  navbarLinks,
   tabs,
   tabsContainer,
   tabsContent,
   nav,
+  allSections,
   header,
+  imgTargets,
 } from "./variables.js";
 
 // * MODAL WINDOW
@@ -47,8 +48,8 @@ document.addEventListener("keydown", function (e) {
 // })
 
 // GOOD PRACTICE WITH THE INTERSECTION OBSERVER API
-  // RESPONSIVE DESIGN
-const navHeight = nav.getBoundingClientRect().height
+// RESPONSIVE DESIGN
+const navHeight = nav.getBoundingClientRect().height;
 const stickyNav = function (entries) {
   const [entry] = entries;
   // console.log(entry.isIntersecting)
@@ -102,5 +103,26 @@ const handleHover = function (e) {
   }
 };
 nav.addEventListener("mouseover", handleHover.bind(0.5));
-
 nav.addEventListener("mouseout", handleHover.bind(1));
+
+// * REVEAL SECTIONS
+const revelSection = function (entries, observer) {
+  const [entry] = entries;
+  if(!entry.isIntersecting) return
+  entry.target.classList.remove("section--hidden")
+  observer.unobserve(entry.target)
+};
+
+const sectionObserver = new IntersectionObserver(revelSection, {
+  root: null,
+  threshold: 0.15,
+});
+
+allSections.forEach(function (section) {
+  sectionObserver.observe(section);
+  section.classList.add("section--hidden")
+});
+
+//* LAZY LOADING IMG (PERFOMACE)
+
+console.log(imgTargets)
