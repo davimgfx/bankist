@@ -16,6 +16,10 @@ import {
   allSections,
   header,
   imgTargets,
+  slides,
+  slider,
+  btnLeft,
+  btnRight,
 } from "./variables.js";
 
 // * MODAL WINDOW
@@ -120,7 +124,7 @@ const sectionObserver = new IntersectionObserver(revelSection, {
 
 allSections.forEach(function (section) {
   sectionObserver.observe(section);
-  section.classList.add("section--hidden");
+  // section.classList.add("section--hidden");
 });
 
 //* LAZY LOADING IMG (PERFORMANCE)
@@ -140,7 +144,41 @@ const loadImg = function (entries, observer) {
 const imgObserver = new IntersectionObserver(loadImg, {
   root: null,
   threshold: 0,
-  rootMargin: "200px"
+  rootMargin: "200px",
 });
 
 imgTargets.forEach((img) => imgObserver.observe(img));
+
+// * SLIDER
+
+const goToSlide = (slide) => {
+  slides.forEach((s, i) => {
+    s.style.transform = `translateX(${100 * (i - slide)}%)`;
+  });
+};
+
+goToSlide(0);
+let curSlide = 0;
+const maxSlide = slides.length;
+
+const changeSlide = (direction) => {
+  curSlide = (curSlide + direction + maxSlide) % maxSlide;
+  goToSlide(curSlide);
+};
+
+btnRight.addEventListener("click", () => {
+  changeSlide(1);
+});
+
+btnLeft.addEventListener("click", () => {
+  changeSlide(-1);
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight") {
+    changeSlide(1);
+  }
+  if (e.key === "ArrowLeft") {
+    changeSlide(-1);
+  }
+});

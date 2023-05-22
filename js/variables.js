@@ -11,7 +11,6 @@ const menuIcon = document.querySelector("#menu__icon");
 
 const nav = document.querySelector(".nav");
 const navbar = document.querySelector(".nav__links");
-const navbarLinks = document.querySelectorAll(".nav__link");
 
 const tabs = document.querySelectorAll(".operations__tab");
 const tabsContainer = document.querySelector(".operations__tab-container");
@@ -19,6 +18,11 @@ const tabsContent = document.querySelectorAll(".operations__content");
 
 const imgTargets = document.querySelectorAll("img[data-src]");
 
+const slides = document.querySelectorAll(".slide")
+const slider = document.querySelector(".slider")
+
+const btnLeft = document.querySelector(".slider__btn--left")
+const btnRight = document.querySelector(".slider__btn--right")
 export {
   modal,
   overlay,
@@ -28,7 +32,6 @@ export {
   section1,
   menuIcon,
   navbar,
-  navbarLinks,
   tabs,
   tabsContainer,
   tabsContent,
@@ -36,4 +39,8 @@ export {
   header,
   allSections,
   imgTargets,
+  slides,
+  slider,
+  btnLeft,
+  btnRight
 };
