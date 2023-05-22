@@ -664,7 +664,7 @@ h4 {
   .nav {
     position: relative;
   }
-  .block{
+  .block {
     display: block !important;
   }
 
@@ -686,7 +686,7 @@ h4 {
     display: none;
   }
 
-  .nav__item{
+  .nav__item {
     margin: 1rem 0;
   }
 
@@ -749,7 +749,7 @@ h4 {
   .operations__tab-container {
     display: flex;
     flex-direction: row;
-    justify-content: center; 
+    justify-content: center;
   }
 
   .operations__icon {

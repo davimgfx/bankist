@@ -108,9 +108,9 @@ nav.addEventListener("mouseout", handleHover.bind(1));
 // * REVEAL SECTIONS
 const revelSection = function (entries, observer) {
   const [entry] = entries;
-  if(!entry.isIntersecting) return
-  entry.target.classList.remove("section--hidden")
-  observer.unobserve(entry.target)
+  if (!entry.isIntersecting) return;
+  entry.target.classList.remove("section--hidden");
+  observer.unobserve(entry.target);
 };
 
 const sectionObserver = new IntersectionObserver(revelSection, {
@@ -120,9 +120,27 @@ const sectionObserver = new IntersectionObserver(revelSection, {
 
 allSections.forEach(function (section) {
   sectionObserver.observe(section);
-  section.classList.add("section--hidden")
+  section.classList.add("section--hidden");
 });
 
-//* LAZY LOADING IMG (PERFOMACE)
+//* LAZY LOADING IMG (PERFORMANCE)
 
-console.log(imgTargets)
+const loadImg = function (entries, observer) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) return;
+  entry.target.src = entry.target.dataset.src;
+  entry.target.addEventListener("load", function () {
+    entry.target.classList.remove("lazy-img");
+  });
+
+  observer.unobserve(entry.target);
+};
+
+const imgObserver = new IntersectionObserver(loadImg, {
+  root: null,
+  threshold: 0,
+  rootMargin: "200px"
+});
+
+imgTargets.forEach((img) => imgObserver.observe(img));
