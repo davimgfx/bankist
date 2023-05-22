@@ -779,10 +779,66 @@ h4 {
   .operations__icon {
     display: none;
   }
-  .section__title--testimonials{
+  .section__title--testimonials {
     margin-bottom: 10rem;
   }
   .slider {
     overflow: visible;
+  }
+}
+
+@media (max-width: 500px) {
+  .section__title--testimonials {
+    margin-bottom: 15rem;
+  }
+  .nav {
+    padding: 0 2rem;
+  }
+  .testimonial__location {
+    margin-bottom: 5rem;
+  }
+  .modal {
+    margin: 0;
+    padding: 1.5rem;
+  }
+  .modal__header {
+    font-size: 2.25rem;
+  }
+  .modal__form {
+    margin: 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 460px) {
+  .dots {
+    display: none;
+  }
+  .slider__btn--right {
+    display: none;
+  }
+  .slider__btn--left {
+    display: none;
+  }
+  .testimonial::before {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .section__title--testimonials {
+    margin-bottom: 20rem;
+  }
+}
+
+@media (max-width: 385px) {
+  .section__title--testimonials {
+    margin-bottom: 29rem;
+  }
+  .testimonial__location {
+    margin-bottom: 15rem;
   }
 }
